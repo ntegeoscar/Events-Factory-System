@@ -1,0 +1,818 @@
+/* General Styles */
+body {
+    background-color: #F4F4F4;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 23px;
+    padding-left: 24px;
+    overflow-y: auto;
+}
+
+.logo {
+    width: 212px;
+    height: 49px;
+    margin-bottom: 33px;
+}
+
+.nav-links .nav-item {
+    width: 200px;
+    height: 56px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: #5D6679;
+    cursor: pointer;
+}
+
+.nav-link {
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-item.active {
+    color: #1570EF;
+}
+
+.nav-item i {
+    width: 18px;
+    height: 19px;
+    margin-right: 16px;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 312px; /* Sidebar width + padding */
+    padding-left: 32px;  /* Padding with respect to the sidebar */
+    padding-right: 32px; /* Equal padding on the right */
+    padding-top: 23px; /* Space below navbar */
+}
+
+.navbar {
+    width: calc(100% - 310px); /* Full width - Sidebar width */
+    height: 100px;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 310px;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+}
+
+.search-bar {
+    width: 400px;
+    height: 44px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Page_with_navbar Layout */
+.Page_with_navbar {
+    margin-top: 123px; /* 100px for navbar + 23px space below navbar */
+}
+
+/* Inventory Layout */
+.inventory {
+    margin-top: 123px; /* 100px for navbar + 23px space below navbar */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card.medium {
+    flex-basis: calc(67% - 16px); /* Ratio approximation for 687px medium, subtracting padding */
+    margin-right: 16px; /* Padding between columns */
+}
+
+.card.small {
+    flex-basis: calc(33% - 16px); /* Ratio approximation for 384px medium, subtracting padding */
+}
+
+.card h2 {
+    color: #383E49;
+    font-size: 20px;
+    margin: 0;
+    padding: 16px 0 22px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0 22px 16px;
+
+}
+
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-content .box {
+    width: calc((100% - 64px) / 3); /* Three boxes with 16px padding on each side */
+    text-align: center;
+    padding: 0 16px;
+}
+
+.card-content .box i {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-content .box .number {
+    font-size: 16px;
+    color: #5D6679;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card-content .box .description {
+    font-size: 14px;
+    color: #444444;
+    margin-top: 5px;
+}
+
+.card-content .box .box-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Specific to Card 7 (Top Rented Items) */
+#card7 .card-content {
+    padding: 0; /* Remove extra padding */
+    display: block; /* Ensure the table is block-level */
+}
+
+#card7 .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif; /* Font from inventory-card */
+    font-size: 14px;
+    color: #48505E; /* Text color from inventory-card */
+}
+
+#card7 .table th, #card7 .table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #F0F1F3; /* Similar border */
+    text-align: left;
+}
+
+#card7 .table th {
+    font-weight: bold;
+    color: #667085;
+}
+
+#card7 .table td {
+    font-weight: normal;
+}
+
+
+/* Specific to Card 8 (Low Quantity Stock) */
+#card8 .card-content {
+    flex-direction: column; /* Arrange items vertically */
+}
+
+#card8 img {
+    width: 50px; /* Define a fixed width */
+    height: 50px; /* Maintain aspect ratio */
+    margin-right: 5px; /* Add 5px margin to the right of the image */
+}
+
+
+
+.low-stock-box {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.low-stock-box .group-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #383E49;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Aligns the badge with the text */
+}
+
+.low-stock-box .badge {
+    margin-left: 8px; /* Adds space between the group name and the badge */
+}
+
+.low-stock-box .remaining {
+    font-size: 14px;
+    color: #667085;
+    margin-left: auto; /* Pushes the remaining text to the right */
+    padding-left: 16px; /* Optional: Adds some padding between the badge and remaining text */
+}
+
+.badge {
+    width: 38px;
+    height: 22px;
+    background-color: #FEECEB;
+    color: #AA3028;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+}
+
+/* Link Styling */
+.see-all {
+    font-size: 14px;
+    color: #0F50AA;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.see-all:hover {
+    text-decoration: underline;
+}
+
+/* Table Styles */
+.table th, .table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #F0F1F3;
+    text-align: left;
+}
+
+.table th {
+    font-weight: bold;
+}
+
+.table td {
+    font-weight: normal;
+}
+
+/* Updated Bar Chart Styles */
+.chart-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+.months {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #5D6679;
+}
+
+.chart rect {
+    transition: height 0.3s ease-in-out;
+}
+
+.chart rect:hover {
+    fill: #4CAF50; /* Optional: Change color on hover */
+}
+
+
+
+
+.low-stock-box {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px 16px; /* Adjusted padding */
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+}
+
+.low-stock-box .group-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #383E49;
+    margin: 0;
+    flex-grow: 1; /* Takes up available space */
+}
+
+.low-stock-box .badge {
+    font-size: 12px;
+    font-weight: bold;
+    color: #AA3028;
+    background-color: #FEECEB;
+    border-radius: 5px;
+    padding: 2px 8px;
+    margin-left: auto; /* Pushes the badge to the right */
+    text-align: right; /* Align the text within the badge to the right */
+    align-self: flex-start; /* Ensures it stays on the top row */
+}
+
+.low-stock-box .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it takes up full width */
+}
+
+.low-stock-box .remaining {
+    font-size: 14px;
+    color: #667085;
+    margin-top: 4px; /* Small space between the group name and remaining */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 0; /* Remove bottom margin to avoid extra space */
+    width: 100%; /* Ensure it takes up the full width */
+    align-self: flex-start; /* Align to the left in its container */
+}
+
+.long {
+    background-color: white;
+    padding: 20px; /* Keep existing padding */
+    border-radius: 8px;
+    margin-top: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+.inventory-card {
+    background-color: white;
+    padding: 20px; /* Keep existing padding */
+    border-radius: 8px;
+    margin-top: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .link-container {
+    position: relative;
+    margin-top: 22px; /* Adjust to 22px below top border of the box */
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px; /* Keep existing spacing between links */
+  }
+  
+
+.inventory-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #48505E;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.inventory-link.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Align with the horizontal line */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: #1366D9;
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background-color: #F0F1F3;
+}
+
+/* Table Styles */
+.table-container {
+    margin-top: 30px; /* Adjust as needed */
+  }
+  
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0; /* Adjust padding as needed */
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .table-header span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #383E49;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 8px; /* Adjust spacing between buttons */
+  }
+  
+  .button {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 40px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .button-primary {
+    width: 116px;
+    height: 40px;
+    background-color: #1366D9;
+  }
+  
+  .button-secondary {
+    width: 118px;
+    height: 40px;
+    background-color: #D0D3D9;
+    color: #5D6679;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #667085;
+    padding: 10px 16px; /* Padding for table headers */
+  }
+  
+  tbody td {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #48505E;
+    padding: 10px 16px; /* Padding for table cells */
+  }
+  
+  tbody tr {
+    cursor: pointer;
+    border-bottom: 0.5px solid #D0D3D9; /* Horizontal lines for rows */
+  }
+  
+  tbody tr:hover {
+    background-color: #F9F9F9; /* Optional: Highlight on hover */
+  }
+  
+  
+  /* ///// */
+
+/* Details card styling*/
+
+.details_titles {
+    font-weight: 600; /* Semi-bold */
+    font-size: 16px;
+    color: #48505E;
+  }
+  
+  .details_subject {
+    font-weight: 500; /* Medium */
+    font-size: 14px;
+    color: #858D9D;
+    margin-right: 10px; /* Adds space between the subject and answer */
+  }
+  
+  .details_answer {
+    font-weight: 500; /* Medium */
+    font-size: 14px;
+    color: #5D6679;
+  }
+
+/* ///// */
+
+/* Form Card */
+.form-card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 40px;
+    width: 50%;
+    margin: 30px auto; /* Center the card and add margin to the top */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #383E49;
+    text-align: left;
+    margin-bottom: 30px; /* Space below the title */
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    justify-content: space-between; /* Distribute space between label and input */
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    width: 30%;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #48505E;
+    text-align: left;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #D0D3D9;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #48505E;
+}
+
+/* Textarea specific styling */
+textarea {
+    height: 100px; /* Adjust height for remarks */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px; /* Space between the buttons */
+    margin-top: 30px;
+}
+
+.button-secondary {
+    background-color: #F0F1F3;
+    color: #858D9D;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-primary {
+    background-color: #1366D9;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column; /* Stack label and input vertically on smaller screens */
+    }
+
+    .form-group label,
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%; /* Full width for labels and inputs on small screens */
+    }
+
+    .button-container {
+        justify-content: center; /* Center the buttons on smaller screens */
+    }
+}
+
+
+
+/* /////// */
+/* General content card styling */
+.content-card {
+    margin-top: 123px; /* Content starts 22px below the navbar */
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling (title and buttons) */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.card-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #383E49;
+    margin-left: 16px;
+    margin-top: 13px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.edit-button,
+.download-button {
+    background-color: white;
+    border: 1px solid #667085;
+    color: #5D6679;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+}
+
+.edit-button {
+    width: 86px;
+    height: 40px;
+    line-height: 40px; /* Match the button height for vertical centering */ 
+}
+
+.download-button {
+    width: 99px;
+    height: 40px;
+}
+
+/* Links for switching between sections */
+.content-links {
+    margin-top: 20px;
+}
+
+.content-links a {
+    margin-right: 20px;
+    font-family: 'Inter', sans-serif;
+    color: #5D6679;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+}
+
+.content-link.active-link {
+    font-weight: bold;
+    color: #383E49;
+}
+
+.content-link .vector {
+    display: none; /* Hidden by default */
+    width: 75px;
+    height: 2px;
+    background-color: #1366D9;
+    position: absolute;
+    bottom: -2px; /* Positioned right below the link */
+    left: 0;
+}
+
+.active-link .vector {
+    display: block; /* Show the vector under active link */
+}
+
+/* Hide all table containers by default */
+.table-container {
+    display: none;
+    margin-top: 20px;
+}
+
+#details-table {
+    display: block; /* Display details section by default */
+}
+
+hr {
+    margin-top: 10px;
+    border: 0;
+    height: 1px;
+    background-color: #E0E0E0;
+}
+
+
+canvas {
+    width: 100%;
+    max-width: 800px;
+}
+
+.bar-chart-container, .line-chart-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+
+.feedback_success {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.feedback_error {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;    
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Set Inter font globally */
+.swal2-popup {
+    font-family: "Inter", sans-serif !important;
+    padding: 20px;
+}
+
+/* Title Styling */
+.swal2-title {
+    font-size: 20px !important;
+    font-weight: 500 !important;  /* Medium */
+    color: #383E49 !important;
+}
+
+/* Message Text Styling */
+.swal2-html-container {
+    font-size: 16px !important;
+    font-weight: 600 !important;  /* Semibold */
+    color: #666666 !important;
+}
+
+/* Button Base Styles */
+.swal2-confirm, .swal2-cancel {
+    width: 86px !important;
+    height: 40px !important;
+    border-radius: 0px !important; /* Sharp edges */
+    font-size: 14px !important;
+}
+
+/* Delete (Confirm) Button */
+.swal2-confirm {
+    background-color: #FF4444 !important; /* Red */
+    border: none !important;
+    color: white !important;
+}
+
+/* Discard (Cancel) Button */
+.swal2-cancel {
+    background-color: white !important;
+    border: 1px solid #667085 !important;
+    color: #667085 !important;
+}
